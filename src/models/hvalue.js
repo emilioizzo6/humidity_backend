@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Hvalue.init({
-    value: DataTypes.FLOAT
+    value: DataTypes.FLOAT,
+    module_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Hvalue',
