@@ -1,4 +1,5 @@
 require('dotenv').config();
+var http = require("http");
 
 const app = require('./app');
 
@@ -12,6 +13,9 @@ db.sequelize.authenticate()
         app.listen(PORT,  
             () => {
             console.log(`listening on port ${PORT}`)
+            setInterval(function(){ 
+                http.get("http://humsensor.herokuapp.com/stay-alive")
+            },300000)
         }
         );
     })

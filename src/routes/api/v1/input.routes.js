@@ -17,5 +17,9 @@ router.post('/:module_id', (req, res) => {
     res.status(200)
 });
 
+router.get('/stay-alive', (req, res) => {
+    res.send("Ok!")
+})
+
 
 module.exports = router;
