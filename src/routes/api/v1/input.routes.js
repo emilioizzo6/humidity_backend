@@ -21,5 +21,19 @@ router.get('/stay-alive', (req, res) => {
     res.send("Ok!")
 })
 
+router.get('/get-data', async (req, res) => {
+    var values = await Hvalue.findAll({
+        attributes: ['createdAt', 'value']
+    })
+    values = values.map(value => {
+        val = value.dataValues.value
+        date = value.dataValues.createdAt.toLocaleDateString()
+        time = value.dataValues.createdAt.toLocaleTimeString()
+        return {'value': val, 'date': date + ' ' + time}
+    })
+    
+    res.send(values)
+})
+
 
 module.exports = router;
