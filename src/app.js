@@ -12,9 +12,6 @@ https.createServer(app);
 
 const routes = require('./routes/index');
 
-app.use(cors({
-    origin: 'https://front-cursos-uc.herokuapp.com'
-}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
