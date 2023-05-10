@@ -13,7 +13,7 @@ async function createValue(data, module_id) {
 
 router.post('/:module_id', (req, res) => {
     createValue(req.query.data, req.params.module_id)
-    console.log(req.query.data, req.params.module_id)
+    console.log(req.query, req.params.module_id)
     res.status(200)
 });
 
